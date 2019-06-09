@@ -3,4 +3,4 @@ MAINTAINER davralin
 
 RUN \
   /usr/bin/apt-get -y update && \
-  /usr/bin/apt-get -y install git-core blhc devscripts devhelper build-essential --no-install-recommends
+  /usr/bin/apt-get -y install git-core blhc devscripts debhelper build-essential --no-install-recommends
