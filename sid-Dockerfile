@@ -2,5 +2,6 @@ FROM debian:sid-slim
 MAINTAINER davralin
 
 RUN \
+  /bin/echo "deb-src http://deb.debian.org/debian/ sid main" > /etc/apt/sources.list.d/src.list && \
   /usr/bin/apt-get -y update && \
-  /usr/bin/apt-get -y install git-core blhc devscripts debhelper build-essential --no-install-recommends
+  /usr/bin/apt-get -y install git-core blhc devscripts debhelper build-essential fakeroot --no-install-recommends
