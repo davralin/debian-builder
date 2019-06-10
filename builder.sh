@@ -25,6 +25,7 @@ then
    echo "No dependencies needed? You sure?"
 else
    echo "Installing build-dependencies.."
+   /usr/bin/apt-get update
    /usr/bin/apt-get install -qq -y $BUILDDEP
 fi
 
