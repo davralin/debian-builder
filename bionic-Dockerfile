@@ -7,6 +7,7 @@ RUN \
   /usr/bin/apt-get -y install --no-install-recommends \
     blhc \
     build-essential \
+    ca-certificates \
     debhelper \
     devscripts \
     fakeroot \
