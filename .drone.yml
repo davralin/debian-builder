@@ -1,0 +1,27 @@
+---
+name: drone-test
+kind: pipeline
+type: docker
+
+steps:
+  - name: markdownlint
+    image: markdownlint/markdownlint
+    failure: ignore
+    commands:
+      - mdl .
+
+  - name: notify
+    image: plugins/matrix
+    when:
+      status:
+        - success
+        - failure
+    settings:
+      homeserver:
+        from_secret: matrix_server
+      roomid:
+        from_secret: matrix_room
+      username:
+        from_secret: matrix_username
+      password:
+        from_secret: matrix_password
